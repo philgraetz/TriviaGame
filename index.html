@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Triva Game</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+</head>
+<body>
+
+    <!-- ==== Question Page ==== -->
+    <div class="container" id="questionPage">
+        <div class="gameTitle">Trivia Game</div> 
+
+        <div class=mainSection>
+            <div class="questionSection"></div>
+            <div class="choicesSection">
+                <div class="choiceBorder makeInvisible">
+                    <div class="choice makeVisible" id="choice1"></div>
+                </div>
+                <div class="choiceBorder makeInvisible">
+                    <div class="choice makeVisible" id="choice2"></div>
+                </div>
+                <div class="choiceBorder makeInvisible">
+                    <div class="choice makeVisible" id="choice3"></div>
+                </div>
+                <div class="choiceBorder makeInvisible">
+                    <div class="choice makeVisible" id="choice4"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeRemainingLabel">&nbsp;</div>
+        <div class="timeProgress">
+            <div class="timeProgressBar"></div>
+        </div>
+    </div>
+
+    <!-- Game JavaScript -->
+    <script src="assets/javascript/game.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $(".choiceBorder").mousedown(myMouseDown);
+            $(".choiceBorder").mouseup(myMouseUp);
+        })
+    </script>
+</body>
+</html>

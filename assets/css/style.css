@@ -1,0 +1,107 @@
+
+NOT_USED {
+    /* Vintage Beach Theme */
+    color: #2e5a0f;
+    color: #34220c;
+    color: #7b9ea4;
+    color: #995b28;
+    color: #e1c8b2;
+}
+
+body {
+    background-color: #7b9ea4;
+    padding-top: 2em;
+}
+.container {
+    background-color: #e1c8b2;
+    background-image: url("../images/beach-vintage-1.jpg");
+    background-repeat: no-repeat;
+    margin-top: 2em;
+    margin: auto;  /* center the div */
+    width: 750px;
+    height: 450px;
+    box-shadow: .5em .5em 0 #000;
+    border-radius: 2em;
+}
+.gameTitle {
+    font-size: 4em;
+    text-align: center;
+    color: #2e5a0f;
+    text-shadow: 2px 2px #fff;
+}
+.mainSection {
+    width: 100%;
+    height: 240px;
+}
+.questionSection {
+    margin-top: 1em;
+    font-size: 2.5em;
+    text-align: center;
+}
+.choicesSection {
+    margin-top: 1em;
+}
+.choiceBorder {
+    border-radius: .6em;
+    border-width: .1em;
+    border-color: #e1c8b2;
+    border-style: solid;
+    width: 75%;
+    margin: auto;
+    margin-bottom: .1em;
+}
+.choice {
+    border-radius: .2em;
+    font-size: 2em;
+    text-align: center;
+}
+.choiceBorder:hover {
+    visibility: visible;
+    background-color: #7b9ea4;
+    box-shadow: .1em .1em .1em #aaa;
+}
+.mouseDown {
+    border-top-color: #777;
+    border-left-color: #777;
+    border-bottom-color: #eee;
+    border-right-color: #eee;
+}
+.timeRemainingLabel {
+    margin: 1em 0 1em 0;
+    font-size: 1em;
+    text-align: center;
+}
+.timeProgress {
+    /* background-color: #995b28; */
+    background-color: #e1c8b2;
+    width: 75%;
+    margin: auto; /* to center it */
+    /* height: 1em; */
+    border: .2em;
+    border-radius: .2em;
+    border-style: solid;
+    border-top-color: #555;
+    border-left-color: #555;
+    border-bottom-color: #fff;
+    border-right-color: #fff;
+}
+.timeProgressBar {
+    /* background-color: #23510f; */
+    background-color: #7b9ea4;
+    width: 99%;
+    /* margin-left: auto;   */
+    /*margin: auto;*/ /* to center it */
+    height: .3em;
+    border: .2em;
+    border-style: solid;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-bottom-color: #555;
+    border-right-color: #555;
+}
+.makeInvisible {
+    visibility: hidden;
+}
+.makeVisible {
+    visibility: visible;
+}
