@@ -10,41 +10,85 @@
 </head>
 <body>
 
-    <!-- ==== Question Page ==== -->
-    <div class="container" id="questionPage">
+    <!-- ==== Start Page ==== -->
+    <div class="container" id="startPage">
         <div class="gameTitle">Trivia Game</div> 
 
-        <div class=mainSection>
-            <div class="questionSection"></div>
+        <!-- Start Section -->
+        <div class="mainSection" id="startSection">
+            <div class="questionLabel" id="pressStart">Press START to begin</div>
+            <div class="choicesSection" id="startText">
+                <div class="choiceBorder makeInvisible" id="startBox">
+                    <div class="choice makeVisible" id="choiceStart">START</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==== Question Page and Answer Page ==== -->
+    <!-- (Enabled on both Question and Answer pages) -->
+    <div class="container" id="questionAnswerPage">
+        <div class="gameTitle">Trivia Game</div> 
+
+        <!-- Question Section (enabled on Question Page -->
+        <div class="mainSection" id="questionSection">
+            <div class="questionLabel" id="questionText"></div>
             <div class="choicesSection">
-                <div class="choiceBorder makeInvisible">
+                <div class="choiceBorder makeInvisible" id="choiceBox0">
+                    <div class="choice makeVisible" id="choice0"></div>
+                </div>
+                <div class="choiceBorder makeInvisible" id="choiceBox1">
                     <div class="choice makeVisible" id="choice1"></div>
                 </div>
-                <div class="choiceBorder makeInvisible">
+                <div class="choiceBorder makeInvisible" id="choiceBox2">
                     <div class="choice makeVisible" id="choice2"></div>
                 </div>
-                <div class="choiceBorder makeInvisible">
+                <div class="choiceBorder makeInvisible" id="choiceBox3">
                     <div class="choice makeVisible" id="choice3"></div>
-                </div>
-                <div class="choiceBorder makeInvisible">
-                    <div class="choice makeVisible" id="choice4"></div>
                 </div>
             </div>
         </div>
 
+        <!-- Answer Section (enabled on Answer Page -->
+        <div class="mainSection" id="answerSection">
+            <div class="answerResponseLabel" id="answerResponse">Dummy Response!</div>
+            <div class="correctAnswerIsLabel" id="correctAnswerIs">The correct answer is</div>
+            <div class="correctAnswerLabel" id="correctAnswer">Dummy Answer</div>
+        </div>
+
+        <!-- Timer Section -->
         <div class="timeRemainingLabel">&nbsp;</div>
         <div class="timeProgress">
             <div class="timeProgressBar"></div>
         </div>
     </div>
 
+    <!-- ==== End Page ==== -->
+    <div class="container" id="endPage">
+        <div class="gameTitle">Trivia Game</div> 
+    
+        <!-- End Section -->
+        <div class="mainSection" id="endSection">
+            <div class="congratsLabel">Wow! You did great!</div>
+            <div class="finalResultsLabel" id="finalResult"></div>
+
+            <div class="choicesSection">
+                <div class="choiceBorder makeInvisible" id="playAgainBox">
+                    <div class="choice makeVisible" id="playAgain">Play again?</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+
     <!-- Game JavaScript -->
     <script src="assets/javascript/game.js"></script>
 
     <script>
         $(document).ready(function() {
-            $(".choiceBorder").mousedown(myMouseDown);
-            $(".choiceBorder").mouseup(myMouseUp);
+            gameSetup();
         })
     </script>
 </body>
