@@ -8,8 +8,8 @@ body {
     margin-top: 2em;
     margin: auto;  /* center the div */
     width: 750px;
-    height: 450px;
-    box-shadow: .5em .5em .5em #000;
+    height: 500px;
+    box-shadow: -.5em -.5em .5em #808080;
     border-radius: 2em;
 }
 .gameTitle {
@@ -24,7 +24,7 @@ body {
 }
 .mainSection {
     width: 100%;
-    height: 250px;
+    height: 320px;
 }
 .questionLabel, .congratsLabel, .answerResponseLabel {
     font-size: 2.2em;
@@ -43,7 +43,7 @@ body {
     margin: auto;
     margin-bottom: .1em;
 }
-.choice, .correctAnswerLabel, .finalResultsLabel {
+.choice, .finalResultsLabel {
     border-radius: .2em;
     font-size: 2em;
     text-align: center;
@@ -59,8 +59,18 @@ body {
     border-bottom-color: #eee;
     border-right-color: #eee;
 }
-.timeRemainingLabel, .correctAnswerIsLabel {
-    margin: 1em 0 1em 0;
+.correctAnswerIsLabel {
+    margin: .8em 0 .4em 0;
+    font-size: 1em;
+    text-align: center;
+}
+.correctAnswerLabel {
+    border-radius: .2em;
+    font-size: 2em;
+    text-align: center;
+}
+.timeRemainingLabel {
+    margin: 1em 0 .5em 0;
     font-size: 1em;
     text-align: center;
 }
@@ -96,38 +106,34 @@ body {
 .makeVisible {
     visibility: visible;
 }
-
-
-/* THEME RELEVANT CSS */
-NOT_USED {
-    /* Vintage Beach Theme */
-    color: #2e5a0f;
-    color: #34220c;
-    color: #7b9ea4;
-    color: #995b28;
-    color: #e1c8b2;
+#imgDiv, #answerGif {
+    padding-top: 5px;
+    width: 250px;
+    margin: auto;
 }
+
+/* Theme background and colors (blue sky) */
 body {
     background-color: #bbb;
 }
 .container {
-    background-color: #e1c8b2;
-    background-image: url("../images/beach-vintage-1.jpg");
+    background-color: #D0E4F2;  /*<==Customize==>*/
+    background-image: url("../images/PalisadeHead.jpg");   /*<==Customize==>*/
     background-repeat: no-repeat;
 }
 .gameTitle {
-    color: #2e5a0f;
+    color: #0D4FA6;  /*<==Customize==>*/
 }
 .choiceBorder {
-    border-color: #e1c8b2;
+    border-color: #D0E4F2;  /*<==Customize==>*/
 }
 .choiceBorder:hover {
-    background-color: #7b9ea4;
+    background-color: #D0E4F2;  /*<==Customize==>*/
     box-shadow: .1em .1em .1em #aaa;
 }
 .timeProgress {    
-    background-color: #e1c8b2;
+    background-color: #85A5CC;  /*<==Customize==>*/
 }
 .timeProgressBar {
-    background-color: #7b9ea4;
+    background-color: #1E82D9;  /*<==Customize==>*/
 }

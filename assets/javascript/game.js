@@ -1,60 +1,54 @@
 
-const QUESTION_TIMEOUT = 15;   // 15 seconds
-const ANSWER_PAGE_TIMEOUT = 1; // 3 seconds
+const QUESTION_TIMEOUT = 20;   // 20 seconds
+const ANSWER_PAGE_TIMEOUT = 8; // 8 seconds
 // ====================================
 // Data Structure for LIST OF QUESTIONS
 // ====================================
 triviaQuestionList = [
-    // {
-    //     question: "",
-    //     answerList: [
-    //         "",
-    //         "",
-    //         "",
-    //         "",
-    //     ],
-    //     correctAnswer: 0,
-    // },
     {
-        question: "What town in MN will you find a tribute to the Monty Python Spam sketch?",
+        question: "How many lakes in MN over 10 acres?",
         answerList: [
-            "Albert Lea",
-            "Austin",
-            "Minneapolis",
-            "Rochester",
+            "10,000",
+            "7,483",
+            "14,519",
+            "11,842",
         ],
-        correctAnswer: 1,
+        correctAnswer: 3,
+        image: "assets/images/soothinglake.gif",
+    },
+    {
+        question: "Where did 3M get it's start?",
+        answerList: [
+            "St Paul",
+            "Maplewood",
+            "Two Harbors",
+            "St Peter",
+        ],
+        correctAnswer: 2,
+        image: "assets/images/PostItSlinky.webp",
+    },
+    {
+        question: "What town in MN will you find a tribute to the Monty Python SPAM sketch?",
+        answerList: [
+            "Austin",
+            "Albert Lea",
+            "Minneapolis",
+            "Alexandria",
+        ],
+        correctAnswer: 0,
+        image: "assets/images/spam.gif",
     },
     {
         question: "Famous MN giant (may be fictional)?",
         answerList: [
             "Jolly Green Giant",
             "Paul Bunyan",
-            "Giant remains found near Sauk Rapids",
+            "Giant remains at Sauk Rapids",
             "All of the above",
         ],
         correctAnswer: 3,
+        image: "assets/images/PaulBunyan.gif",
     },
-    {
-        question: "What is your quest?",
-        answerList: [
-            "To find Nirvana",
-            "To count the pebbles on the beach",
-            "To seek the Holy Grail",
-            "Jump in a lake",
-        ],
-        correctAnswer: 2,
-    },
-    {   
-        question: "What is your favorite color?",
-        answerList: [
-            "Red",
-            "Green",
-            "Blue",
-            "I mean YELLLLOOOOWWW...",
-        ],
-        correctAnswer: 3,
-    }
 ];
 
 // Global pointer to TriviaGame Object
@@ -104,6 +98,7 @@ function TriviaGame() {
     // Go the the Start page
     // (And start a new game as well)
     this.goToStartPage = function() {
+
         // Init values for new game
         this.questionList = triviaQuestionList;
         this.currentAnswer = -1;    // -1 = no answer
@@ -159,7 +154,6 @@ function TriviaGame() {
     // Stop the question page timer
     this.stopQuestionPageTimer = function() {
         if (this.questionPageTimerId !== null) {
-            console.log("clearing questionPageTimer")
             clearInterval(this.questionPageTimerId);
             this.questionPageTimerId = null;
         }
@@ -212,8 +206,18 @@ function TriviaGame() {
         // Display the Answer Section
         $("#answerSection").show();
 
-        // Check for correct answer and display results
         let qq = this.questionList[this.currentQuestionIndex];
+
+        // Add an image
+        $("#imgDiv").empty(); // clear any previous image
+        if (qq.image !== "") {
+            newImg = $("<img>");
+            newImg.attr("id", "answerGif");
+            newImg.attr("src", qq.image);
+            $("#imgDiv").append(newImg);
+        }
+
+        // Check for correct answer and display results
         if (this.currentAnswer < 0) {
             $("#answerResponse").text("TIME IS UP!");
         }
