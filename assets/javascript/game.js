@@ -1,6 +1,6 @@
 
 const QUESTION_TIMEOUT = 20;   // 20 seconds
-const ANSWER_PAGE_TIMEOUT = 8; // 8 seconds
+const ANSWER_PAGE_TIMEOUT = 4; // 4 seconds
 // ====================================
 // Data Structure for LIST OF QUESTIONS
 // ====================================
