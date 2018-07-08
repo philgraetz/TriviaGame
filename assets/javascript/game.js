@@ -63,6 +63,7 @@ function gameSetup() {
     $(".choiceBorder").mousedown(mouseDownCB);
     $(".choiceBorder").mouseup(mouseUpCB);
     $(".choiceBorder").hover(hoverCB);
+    $(".choiceBorder").on("touchstart click", touchstartCB);
 
 
     thisTGObject.goToStartPage();
@@ -88,6 +89,15 @@ function hoverCB(e) {
     let elt = $(this);
     let id = elt.attr("id");
     let msg = "hover " + id + " type " + e.type;  
+    console.log(msg);  
+    $("#FIXME-test").append(msg);
+    // thisTGObject.processChoice(id);
+}
+function touchstartCB(e) {
+    e.stopPropagation(); 
+    let elt = $(this);
+    let id = elt.attr("id");
+    let msg = "[" + id + " type " + e.type + "]";  
     console.log(msg);  
     $("#FIXME-test").append(msg);
     // thisTGObject.processChoice(id);
