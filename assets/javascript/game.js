@@ -62,7 +62,7 @@ function gameSetup() {
     // Register Callbacks
     $(".choiceBorder").mousedown(mouseDownCB);
     $(".choiceBorder").mouseup(mouseUpCB);
-    $(".choiceBorder").hover(hoverCB);
+    $(".choiceBorder").click(clickCB);
     $(".choiceBorder").on("touchstart click", touchstartCB);
 
 
@@ -85,10 +85,10 @@ function mouseUpCB() {
     let id = elt.attr("id");
     // thisTGObject.processChoice(id);
 }
-function hoverCB(e) {
+function clickCB(e) {
     let elt = $(this);
     let id = elt.attr("id");
-    let msg = "hover " + id + " type " + e.type;  
+    let msg = "click " + id + " type " + e.type;  
     console.log(msg);  
     $("#FIXME-test").append(msg);
     // thisTGObject.processChoice(id);
