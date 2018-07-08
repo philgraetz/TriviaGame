@@ -65,6 +65,10 @@ function gameSetup() {
     $(".choiceBorder").on("click", clickCB);
     $(".choice").on("click", clickCB);
     $(".choiceBorder").on("focus", focusCB);
+    $(".choice").on("focus", focusCB);
+    $(".choiceBorder").on("hover", hoverCB);
+    $(".choice").on("hover", hoverCB);
+
 
     thisTGObject.goToStartPage();
 }
@@ -95,6 +99,13 @@ function focusCB() {
     let elt = $(this);
     let id = elt.attr("id");
     console.log("focus " + id);    
+}
+function hoverCB() {
+    let elt = $(this);
+    let id = elt.attr("id");
+    console.log("hover " + id);  
+    thisTGObject.processChoice(id);
+
 }
 function questionPageTimerCB() {
     thisTGObject.questionPageTimer();
