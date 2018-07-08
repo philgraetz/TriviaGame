@@ -84,11 +84,12 @@ function clickCB(e) {
     // thisTGObject.processChoice(id);
 }
 function touchstartCB(e) {
+    // This is a fix for iPad
+    // which doesn't seem to recognize 'click' by itself
     e.stopPropagation(); 
     let elt = $(this);
     let id = elt.attr("id");
-    let msg = "[" + id + " type " + e.type + "]";  
-    $("#FIXME-test").append(msg);
+    // check for 'click' (as opposed to 'touchstart')
     if (e.type === "click")
         thisTGObject.processChoice(id);
 }
