@@ -83,13 +83,13 @@ function mouseUpCB() {
     elt.removeClass("mouseDown");
 
     let id = elt.attr("id");
-    thisTGObject.processChoice(id);
+    // thisTGObject.processChoice(id);
 }
 function clickCB() {
     let elt = $(this);
     let id = elt.attr("id");
     console.log("click " + id);    
-    // thisTGObject.processChoice(id);
+    thisTGObject.processChoice(id);
 }
 function focusCB() {
     let elt = $(this);
