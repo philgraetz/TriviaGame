@@ -62,7 +62,7 @@ function gameSetup() {
     // Register Callbacks
     $(".choiceBorder").mousedown(mouseDownCB);
     $(".choiceBorder").mouseup(mouseUpCB);
-    $(".choiceBorder").click(clickCB);
+    $(".choiceBorder").on("touchstart click", touchstartCB);
     thisTGObject.goToStartPage();
 }
 
@@ -81,7 +81,16 @@ function clickCB(e) {
     let elt = $(this);
     elt.removeClass("mouseDown");
     let id = elt.attr("id");
-    thisTGObject.processChoice(id);
+    // thisTGObject.processChoice(id);
+}
+function touchstartCB(e) {
+    e.stopPropagation(); 
+    let elt = $(this);
+    let id = elt.attr("id");
+    let msg = "[" + id + " type " + e.type + "]";  
+    $("#FIXME-test").append(msg);
+    if (e.type === "click")
+        thisTGObject.processChoice(id);
 }
 function questionPageTimerCB() {
     thisTGObject.questionPageTimer();
