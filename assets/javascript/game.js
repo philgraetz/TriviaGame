@@ -62,6 +62,9 @@ function gameSetup() {
     // Register Callbacks
     $(".choiceBorder").mousedown(mouseDownCB);
     $(".choiceBorder").mouseup(mouseUpCB);
+    $(".choiceBorder").on("click", clickCB);
+    $(".choice").on("click", clickCB);
+    $(".choiceBorder").on("focus", focusCB);
 
     thisTGObject.goToStartPage();
 }
@@ -71,14 +74,27 @@ function gameSetup() {
 // because 'this' refers to JQuery DOM element
 // not the TriviaGame object
 function mouseDownCB()  {
+    console.log("mouseDown");
     $(this).addClass("mouseDown");
 }
 function mouseUpCB() {
+    console.log("mouseUP");
     let elt = $(this);
     elt.removeClass("mouseDown");
 
     let id = elt.attr("id");
     thisTGObject.processChoice(id);
+}
+function clickCB() {
+    let elt = $(this);
+    let id = elt.attr("id");
+    console.log("click " + id);    
+    // thisTGObject.processChoice(id);
+}
+function focusCB() {
+    let elt = $(this);
+    let id = elt.attr("id");
+    console.log("focus " + id);    
 }
 function questionPageTimerCB() {
     thisTGObject.questionPageTimer();
